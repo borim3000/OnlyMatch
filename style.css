@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --pink: #FFDEFE;
+}
+
+body {
+    background: var(--pink);
+}
+
+.main_logo{
+    display: block;
+    position: relative;
+    max-width: 100px;
+}
