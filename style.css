@@ -7,6 +7,7 @@
 :root{
     --pink: #FFDEFE;
     --darkpink: #FF8BB2;
+    --offpink: #E79191;
     --blue: #E5F9FF;
 }
 
@@ -21,7 +22,7 @@ body{
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }  
 
 .main_logo img{
@@ -31,8 +32,22 @@ body{
 }
 
 .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     max-width: 500px;
     margin: 0 auto;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid var(--offpink);
+    border-radius: 8px;
 }
 
 .matchImg{
@@ -53,16 +68,32 @@ body{
 button{
     margin-top: 30px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 30px;
     cursor: pointer;
     background-color: var(--darkpink);
+    max-width: 300px;
+    border-radius: 10px;
+    color: white;
+}
+
+.loading_container{
+    height: 40px;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 20px 0;
+
+    border: none; /*macht dass border nicht angezeigt wird wenn loading bar nicht läuft*/
+}
+
+.loading_container.active{
+    border: 5px solid white; /*zeigt border wenn loading bar läuft*/
 }
 
 .loading_bar{
-    height: 10px;
+    height: 100%;
     width: 0%;
     background-color: var(--blue);
-    margin: 20px 0;
-   
+    margin: 0;
     transition: width 2s ease-in-out;
 }

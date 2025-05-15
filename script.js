@@ -1,12 +1,29 @@
 console.log('big baba console nachricht')
 
+const loadingContainer = document.getElementById("loadingContainer");
 const loadingBar = document.getElementById("loadingBar");
 const profile = document.getElementById("profile");
 const matchImage = document.getElementById("matchImage");
 const matchName = document.getElementById("matchName");
 const button = document.getElementById("getMatchBtn");
+const inputFields = document.getElementById("inputFields");
+const inputs = [
+    document.getElementById("inputAge"),
+    document.getElementById("inputEyes"),
+    document.getElementById("inputFood"),
+    document.getElementById("inputEmail"),
+];
 
 async function getYourMatch() {
+
+    //all text fields must  have input
+    const allFilled = inputs.every(input => input.value.trim() !== "");
+
+    if (!allFilled) {
+        alert("Please enter the required Info! Our Algorithm needs to know something about you to find your perfect Match.");
+        return;
+    }
+
     //hide button
     button.style.display = "none";
 
@@ -17,7 +34,11 @@ async function getYourMatch() {
     loadingBar.style.width = "0%";
     loadingBar.style.display = "block";
 
+    inputFields.style.display = "none";
+
     //loading bar animation
+
+    loadingContainer.classList.add("active");
 
     requestAnimationFrame(() => {
         loadingBar.style.width = "100%";
@@ -45,6 +66,7 @@ async function getYourMatch() {
         console.error("Error fetching Match:", error);
     } finally {
         //hide loading bar
+        loadingContainer.classList.remove("active");
         loadingBar.style.display = "none";
         loadingBar.style.width = "0%";
     }
