@@ -6,14 +6,63 @@
 
 :root{
     --pink: #FFDEFE;
+    --darkpink: #FF8BB2;
+    --blue: #E5F9FF;
 }
 
-body {
+body{
     background: var(--pink);
+    text-align: center;
+    padding: 50px;
 }
 
 .main_logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}  
+
+.main_logo img{
+    max-width: 600px;
+    height: auto;
     display: block;
-    position: relative;
-    max-width: 100px;
+}
+
+.container{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.matchImg{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    opacity: 0%;
+    transition: opacity 0.5s ease-in;
+}
+
+.name{
+    font-size: 20px;
+    margin-top: 10px;
+    opacity: 0%;
+    transition: opacity 0.5s ease-in;
+}
+
+button{
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--darkpink);
+}
+
+.loading_bar{
+    height: 10px;
+    width: 0%;
+    background-color: var(--blue);
+    margin: 20px 0;
+   
+    transition: width 2s ease-in-out;
 }
