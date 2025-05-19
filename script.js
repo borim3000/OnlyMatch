@@ -52,7 +52,6 @@ async function getYourMatch() {
         const user = data.results[0];
 
         //delay simulation
-        await new Promise((resolve) => setTimeout(resolve, 2300));
 
         matchImage.src = user.picture.large;
         matchImage.onload = () => {
