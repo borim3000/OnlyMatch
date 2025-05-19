@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnlyMatch</title>
     <link rel="stylesheet" href="/style.css">
-    <style>
-        @font-face {
-            font-family: 'Zain';
-            src: url('/fonts/Zain.ttf') format('truetype');
-        }
 
+    <!-- Font preload and embedding (outside of <style>!) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+
+    <style>
         .description-text {
             font-family: 'Zain', sans-serif;
             font-size: 42px;
@@ -22,7 +23,6 @@
     </style>
 </head>
 <body>
-
     <section>
         <div class="main_logo">
             <a href="/index.html">
