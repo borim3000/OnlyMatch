@@ -5,26 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OnlyMatch</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        @font-face {
+            font-family: 'Zain';
+            src: url('/fonts/Zain.ttf') format('truetype'); /* Passe Pfad und Format an */
+        }
+
+        .description-text {
+            font-family: 'Zain', sans-serif;
+            font-size: 42px;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+    </style>
 </head>
 <body>
 
     <section>
         <div class="main_logo">
             <a href="/index.html">
-            <img src="/icons/logo.png" alt="OnlyMatch Logo">
-        </a>
+                <img src="/icons/logo.png" alt="OnlyMatch Logo">
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <div class="description-text">
+            Our platform uses advanced matching algorithms and knowledge engineering to connect people based on deep compatibility, shared values, and real personality insights. We help you meet the person who's truly right for you.
         </div>
     </section>
 
     <main>
-
         <section>
             <a href="match.html">
                 <button>Get Started!</button>
             </a>
         </section>
-
-            
     </main>
 
     <script src="/script.js" type="module"></script>
