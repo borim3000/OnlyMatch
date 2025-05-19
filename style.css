@@ -10,6 +10,8 @@
     --offpink: #E79191;
     --blue: #E5F9FF;
 }
+
+/**  FONTS  **/
 .zain-extralight {
     font-family: "Zain", sans-serif;
     font-weight: 200;
@@ -58,6 +60,7 @@
     font-style: italic;
   }
   
+/** MAIN PART **/
 
 body{
     background: var(--pink);
@@ -77,6 +80,16 @@ body{
     max-width: 600px;
     height: auto;
     display: block;
+}
+
+.description-text {
+  font-family: 'Zain', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 850px;
+  padding: 0 20px;
+  line-height: 45px;
 }
 
 .container{
@@ -114,13 +127,14 @@ input[type="text"] {
 }
 
 button{
+    font-family: "zain";
     margin-top: 30px;
     padding: 10px 20px;
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
     background-color: var(--darkpink);
-    max-width: 300px;
-    border-radius: 10px;
+    max-width: 400px;
+    border-radius: 20px;
     color: white;
 }
 
