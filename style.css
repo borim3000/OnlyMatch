@@ -1,14 +1,14 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root{
-    --pink: #FFDEFE;
-    --darkpink: #FF8BB2;
-    --offpink: #E79191;
-    --blue: #E5F9FF;
+  --pink: #FFDEFE;
+  --darkpink: #FF8BB2;
+  --offpink: #E79191;
+  --blue: #E5F9FF;
 }
 
 a {
@@ -68,24 +68,62 @@ a {
   
 /** MAIN PART **/
 
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
 body{
-    background: var(--pink);
-    text-align: center;
-    padding: 50px;
+  background: var(--pink);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
 }
 
 .main_logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }  
 
 .main_logo img{
-    max-width: 500px;
-    height: auto;
-    display: block;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+.clouds{
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.clouds img{
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+footer{
+  flex-shrink: 0;
 }
 
 .description-text {
@@ -98,44 +136,49 @@ body{
   line-height: 45px;
 }
 
+.index_btn{
+  margin-bottom: 20px;
+}
+
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 500px;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    border: 2px solid var(--offpink);
-    border-radius: 8px;
-    transform: translateY(-100px);
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 2px solid var(--offpink);
+  border-radius: 8px;
+  transform: translateY(-100px);
 }
 
 .input_fields{
-  margin-bottom: -70px;
+margin-bottom: -70px;
 }
 
 .matchImg{
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    opacity: 0%;
-    transition: opacity 0.75s ease-in;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  opacity: 0%;
+  transition: opacity 0.75s ease-in;
 }
 
 .name{
-    font-size: 20px;
-    margin-top: 10px;
-    opacity: 0%;
-    visibility: hidden;
-    transition: opacity 0.9s ease-in;
+  font-family: "Zain";
+  font-size: 30px;
+  margin-top: 10px;
+  opacity: 0%;
+  visibility: hidden;
+  transition: opacity 0.9s ease-in;
 }
 
 .name.visible {
@@ -144,14 +187,14 @@ input[type="text"] {
 }
 
 button{
-    font-family: "zain";
-    padding: 10px 20px;
-    font-size: 50px;
-    cursor: pointer;
-    background-color: var(--darkpink);
-    max-width: 500px;
-    border-radius: 20px;
-    color: white;
+  font-family: "zain";
+  padding: 10px 20px;
+  font-size: 50px;
+  cursor: pointer;
+  background-color: var(--darkpink);
+  max-width: 500px;
+  border-radius: 20px;
+  color: white;
 }
 
 .button_small{
@@ -171,25 +214,25 @@ button{
 }
 
 .loading_container{
-    height: 40px;
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 20px 0;
+  height: 40px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 20px 0;
 
-    border: none; /*macht dass border nicht angezeigt wird wenn loading bar nicht läuft*/
+  border: none; /*macht dass border nicht angezeigt wird wenn loading bar nicht läuft*/
 }
 
 .loading_container.active{
-    border: 5px solid white; /*zeigt border wenn loading bar läuft*/
+  border: 5px solid white; /*zeigt border wenn loading bar läuft*/
 }
 
 .loading_bar{
-    height: 100%;
-    width: 0%;
-    background-color: var(--blue);
-    margin: 0;
-    transition: width 4s ease-in-out;
+  height: 100%;
+  width: 0%;
+  background-color: var(--blue);
+  margin: 0;
+  transition: width 4s ease-in-out;
 }
 
 .profile {
@@ -208,6 +251,7 @@ button{
   visibility: hidden;
   transition: opacity 0.5s ease-in;
 }
+
 
 .match_found.visible{
   opacity: 1;
