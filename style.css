@@ -140,6 +140,16 @@ footer{
   margin-bottom: 20px;
 }
 
+.interactive_buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.only_heart{
+  max-width: 15vw;
+}
+
 .container{
   display: flex;
   align-items: center;
