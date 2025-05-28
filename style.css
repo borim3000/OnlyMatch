@@ -108,7 +108,7 @@ main{
 }  
 
 .main_logo img{
-  max-width: 500px;
+  width: clamp(20px, 75vw, 600px);  
   height: auto;
   display: block;
 }
@@ -135,13 +135,14 @@ footer{
 
 .description-text {
   font-family: 'Zain', sans-serif;
-  font-size: 40px;
+  font-size: clamp(24px, 4vw, 40px);
   text-align: center;
   margin: 40px auto;
   max-width: 850px;
-  padding: 0 20px;
-  line-height: 45px;
+  padding: 0 50px;
+  line-height: clamp(20px, 3.5vw, 35px);
 }
+
 .disclaimer-section {
     background-image: url('/icons/Blume.png');
     background-size: cover;
@@ -163,28 +164,57 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 .index_btn{
   margin-bottom: 20px;
 }
 
-.disclaimer_button{
+.only_heart{
+  display: block;
+  width: clamp(8rem, 15vw, 250px);
+  max-height: auto;
+}
+
+.heart_left{
   position: relative;
   display: inline-block;
   text-align: center;
   max-width: 15vw;
+  transform: rotate(-15deg);
+}
+
+.heart_left p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-family: "nanum pen script";
+  font-size: 3vw;
+  line-height: 0.8;
+  color: white;
+  width: 15vw;
+}
+
+.disclaimer_button{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  transform: rotate(15deg);
 }
 
 .disclaimer_button h1{
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -110%);
+  transform: translate(-50%, -120%);
   color: white;
   font-family: "nanum pen script";
-  font-size: clamp(10px, 3vw, 50px);
-  max-width: 12vw;
+  font-size: clamp(25px, 3vw, 50px);
+  width: clamp(100px, 10vw, 150px);
   pointer-events: none;
 }
 
@@ -195,18 +225,34 @@ footer{
   transform: translate(-50%, -40%);
   color: black;
   font-family: "zain";
-  font-size: clamp(8px, 1.3vw, 20px);
+  font-size: clamp(11px, 1.3vw, 20px);
   line-height: 0.9;
-  width: clamp(20px, 10vw, 150px);
+  width: clamp(70px, 10vw, 150px);
+  height: auto;
   pointer-events: none;
 }
 
-.only_heart{
-  display: block;
-  width: clamp(5rem, 15vw, 250px);
-  max-height: auto;
-}
+@media (max-width: 850px) {
 
+  .description-text{
+    margin-top: 10px;
+  }
+
+  .interactive_buttons{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disclaimer_button{
+    margin-top: 20px;
+    transform: rotate(0);
+  }
+
+  .heart_left{
+    display: none;
+  }
+}
 
 .container{
   display: flex;
@@ -257,12 +303,16 @@ margin-bottom: -70px;
 button{
   font-family: "zain";
   padding: 10px 20px;
-  font-size: 50px;
+  font-size: clamp(20px, 4.5vw, 70px);
+  line-height: 1;
   cursor: pointer;
   background-color: var(--darkpink);
-  max-width: 500px;
+  width: clamp(150px, 35vw, 500px);
   border-radius: 20px;
   color: white;
+  border: none;
+
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .button_small{
