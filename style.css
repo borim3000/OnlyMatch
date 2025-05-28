@@ -135,6 +135,22 @@ footer{
   padding: 0 20px;
   line-height: 45px;
 }
+.disclaimer-section {
+    background-image: url('/icons/Blume.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.disclaimer-heading {
+    font-size: 60px;
+    font-weight: 800;
+    font-family: 'Zain', sans-serif;
+    margin-bottom: 1rem;
+}
 
 .index_btn{
   margin-bottom: 20px;
