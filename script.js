@@ -15,6 +15,9 @@ const inputs = [
     ];
 const button2 = document.getElementById('GoAgainBtn');
 const matchFound = document.getElementById('matchFound');
+const button3 = document.getElementById('contactBtn');
+const popup = document.getElementById('contactPopup');
+const closeBtn = document.getElementById('closePopup');
 
 
 async function getYourMatch() {
@@ -77,6 +80,9 @@ async function getYourMatch() {
         matchFound.classList.add("visible");
 
         await new Promise((resolve) => setTimeout(resolve, 2000));
+        button3.classList.add("visible");
+
+        await new Promise((resolve) => setTimeout(resolve, 1500));
         button2.classList.add("visible");
     }
 }
@@ -84,3 +90,13 @@ async function getYourMatch() {
 
 document.getElementById('getMatchBtn').addEventListener('click', getYourMatch);
 
+button3.addEventListener('click', () => {
+    popup.hidden = false;
+});
+
+closeBtn.addEventListener('click', () => {
+    popup.hidden = true;
+});
+
+console.log('popup:', popup);
+console.log('closeBtn:', closeBtn);

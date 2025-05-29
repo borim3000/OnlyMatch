@@ -40,7 +40,7 @@
                 <p class="match_found" id="matchFound">Congratulations! <br> We have just found your Soulmate.</p>
 
                 <section class="profile" id="profile" hidden>
-                    <img class="matchImg" id="matchImage" src="" alt="The Perfect Match">
+                    <img class="matchImg" id="matchImage" alt="The Perfect Match">
                     <div class="name" id="matchName"></div>
                 </section>
 
@@ -54,6 +54,8 @@
 
                 <button id="getMatchBtn">Find Your Match!</button>
 
+                <button class="button_small" id="contactBtn">Contact Your Match</button>
+
                 <a href="match.html"> 
                     <button class="button_small" id="GoAgainBtn">Don't like this Match?</button>
                 </a>
@@ -61,14 +63,21 @@
             </section>  
 
         </main>
-        
-        <script src="/script.js" type="module"></script>
 
     </section>
 
-<footer class="clouds">
+    <div id="contactPopup" class="popup" hidden>
+        <div class="popup_content">
+            <p>Your Soulmate has been notified!<br>They should be in touch soon.</p>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+
+    <footer class="clouds">
             <img src="/icons/clouds-bottom.png" alt="onlymatch clouds">
-        </footer>
+    </footer>
+        
+    <script src="/script.js" type="module"></script>
 
 </body>
 

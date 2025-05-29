@@ -191,7 +191,8 @@ footer{
   left: 50%;
   transform: translate(-50%, -60%);
   font-family: "nanum pen script";
-  font-size: 3vw;
+  font-size: clamp(25px, 3vw, 50px);
+  max-width: 300px;
   line-height: 0.8;
   color: white;
   width: 15vw;
@@ -214,12 +215,14 @@ footer{
   color: white;
   font-family: "nanum pen script";
   font-size: clamp(25px, 3vw, 50px);
-  width: clamp(100px, 10vw, 150px);
+  width: clamp(100px, 10vw, 1500px);
+  height: auto;
   pointer-events: none;
 }
 
 .disclaimer_button p {
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -40%);
@@ -259,16 +262,16 @@ footer{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  max-width: 500px;
+  width: clamp(250px, 40vw, 500px);
   margin: 0 auto;
 }
 
 input[type="text"] {
   padding: 10px;
   width: 100%;
-  max-width: 300px;
+  width: clamp(250px, 40vw, 500px);
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: clamp(12px, 3vw, 16px);
   border: 2px solid var(--offpink);
   border-radius: 8px;
   transform: translateY(-100px);
@@ -280,15 +283,15 @@ margin-bottom: -70px;
 
 .matchImg{
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: clamp(150px, 30vw, 200px);
+  height: auto;
   opacity: 0%;
   transition: opacity 0.75s ease-in;
 }
 
 .name{
   font-family: "Zain";
-  font-size: 30px;
+  font-size: clamp(20px, 5vw, 30px);
   margin-top: 10px;
   opacity: 0%;
   visibility: hidden;
@@ -303,7 +306,7 @@ margin-bottom: -70px;
 button{
   font-family: "zain";
   padding: 10px 20px;
-  font-size: clamp(20px, 4.5vw, 70px);
+  font-size: clamp(24px, 4.5vw, 70px);
   line-height: 1;
   cursor: pointer;
   background-color: var(--darkpink);
@@ -316,8 +319,21 @@ button{
 }
 
 .button_small{
-  font-size: 25px;
+  font-size: clamp(16px, 1.5vw, 24px); 
   border-radius: 12px;
+  margin-bottom: 10px;
+  width: clamp(160px, 18vw, 300px);
+}
+
+#contactBtn{
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in;
+}
+
+#contactBtn.visible{
+  opacity: 1;
+  visibility: visible;
 }
 
 #GoAgainBtn{
@@ -359,8 +375,8 @@ button{
 
 .match_found{
   font-family: "zain";
-  font-size: 35px;
-  line-height: 30px;
+  font-size: clamp(28px, 5vw, 35px);
+  line-height: 0.9;
   transform: translateY(-60px);
   margin-bottom: -30px;
   max-width: 400px;
@@ -374,4 +390,43 @@ button{
 .match_found.visible{
   opacity: 1;
   visibility: visible;
+}
+
+.popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.popup_content{
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  font-family: 'Zain', sans-serif;
+}
+
+.popup_content p{
+  font-size: clamp(16px, 2.5vw, 24px);
+  margin-bottom: 20px;
+  line-height: 0.9;
+}
+
+.popup_content button{
+  padding: 10px 20px;
+  font-size: clamp(16px, 2vw, 20px);
+  width: clamp(120px, 15vw, 150px);
+}
+
+[hidden] {
+  display: none !important;
 }
