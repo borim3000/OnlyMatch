@@ -275,6 +275,13 @@ input[type="text"] {
   border: 2px solid var(--offpink);
   border-radius: 8px;
   transform: translateY(-100px);
+
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px white;
 }
 
 .input_fields{

@@ -58,11 +58,15 @@ async function getYourMatch() {
         await new Promise((resolve) => setTimeout(resolve, 4500));
 
         matchImage.src = user.picture.large;
+
         matchImage.onload = () => {
             matchImage.style.opacity = 1;
+        
+            matchImage.addEventListener("transitionend", () => {
+                matchName.textContent = `${user.name.first} ${user.name.last}`;
+                matchName.classList.add("visible");
+            }, { once: true }); //run only once
         };
-        matchName.textContent = `${user.name.first} ${user.name.last}`;
-        matchName.classList.add("visible");
 
         //show profile
         profile.hidden = false;
