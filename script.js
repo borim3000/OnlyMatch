@@ -7,17 +7,13 @@ const matchImage = document.getElementById("matchImage");
 const matchName = document.getElementById("matchName");
 const button1 = document.getElementById("getMatchBtn");
 const inputFields = document.getElementById("inputFields");
-const inputs = [
-    document.getElementById("inputAge"),
-    document.getElementById("inputEyes"),
-    document.getElementById("inputFood"),
-    document.getElementById("inputEmail"),
-    ];
+const inputs = Array.from(document.querySelectorAll('#inputFields input'));
 const button2 = document.getElementById('GoAgainBtn');
 const matchFound = document.getElementById('matchFound');
 const button3 = document.getElementById('contactBtn');
 const popup = document.getElementById('contactPopup');
 const closeBtn = document.getElementById('closePopup');
+
 
 
 async function getYourMatch() {
@@ -91,8 +87,9 @@ async function getYourMatch() {
     }
 }
 
-
 document.getElementById('getMatchBtn').addEventListener('click', getYourMatch);
+
+//popup at the end
 
 button3.addEventListener('click', () => {
     popup.hidden = false;
@@ -101,6 +98,24 @@ button3.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     popup.hidden = true;
 });
+
+//save entered data (age etc) in local storage so user doesn't have to enter it again
+window.addEventListener('DOMContentLoaded', () => {
+    inputs.forEach(input => {
+        const savedValue = localStorage.getItem(input.id);
+        if (savedValue) {
+            input.value = savedValue;
+        }
+    });
+});
+
+inputs.forEach(input => {
+    input.addEventListener('input', () => {
+        localStorage.setItem(input.id, input.value);
+    });
+});
+
+//console log for debug
 
 console.log('popup:', popup);
 console.log('closeBtn:', closeBtn);

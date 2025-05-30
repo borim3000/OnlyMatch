@@ -8,6 +8,7 @@
   --pink: #FFDEFE;
   --darkpink: #FF8BB2;
   --offpink: #E79191;
+  --rosepink: #F92B75;
   --blue: #E5F9FF;
 }
 
@@ -99,6 +100,24 @@ main{
   flex-direction: column;
 }
 
+.logo_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  padding: 20px 0;
+}
+
+.cupid_left{
+  width: clamp(50px, 15vw, 130px);
+  transform: translate(40%, 20%);
+}
+
+.cupid_right{
+  width: clamp(60px, 15.5vw, 145px);
+  transform: translate(-40%, 20%);
+}
+
 .main_logo{
   display: flex;
   justify-content: center;
@@ -108,7 +127,7 @@ main{
 }  
 
 .main_logo img{
-  width: clamp(20px, 75vw, 600px);  
+  width: clamp(20px, 75vw, 500px);  
   height: auto;
   display: block;
 }
@@ -139,22 +158,23 @@ footer{
   text-align: center;
   margin: 40px auto;
   max-width: 850px;
-  padding: 0 50px;
+  padding: 0 30px;
   line-height: clamp(20px, 3.5vw, 35px);
 }
 
 .disclaimer-section {
     background-image: url('/icons/Blume.png');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     z-index: 1;
+    margin-bottom: 20px;
 }
 
 .disclaimer-heading {
-    font-size: 60px;
+    font-size: clamp(26px, 7vw, 60px);
     font-weight: 800;
     font-family: 'Zain', sans-serif;
     margin-bottom: 1rem;
@@ -169,6 +189,19 @@ footer{
 
 .index_btn{
   margin-bottom: 20px;
+}
+
+.index_btn button{
+  background-color: var(--blue);
+  color: black;
+
+  transition: transform 0.2s ease-in-out, background-color 0.15s ease, color 0.15s ease;
+}
+
+.index_btn button:hover{
+  transform: scale(1.05);
+  background-color: var(--darkpink);
+  color: white;
 }
 
 .only_heart{
@@ -204,6 +237,11 @@ footer{
   text-align: center;
 
   transform: rotate(15deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.disclaimer_button:hover{
+  transform: scale(1.2);
 }
 
 .disclaimer_button h1{
@@ -313,16 +351,71 @@ margin-bottom: -70px;
 button{
   font-family: "zain";
   padding: 10px 20px;
-  font-size: clamp(24px, 4.5vw, 70px);
+  font-size: clamp(22px, 4.5vw, 65px);
   line-height: 1;
   cursor: pointer;
   background-color: var(--darkpink);
-  width: clamp(150px, 35vw, 500px);
+  width: clamp(170px, 35vw, 500px);
   border-radius: 20px;
   color: white;
   border: none;
 
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+
+}
+
+.go_btn{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.button_wrapper{
+  position: relative;
+  display: inline-block;
+}
+
+.button_wrapper button{
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+}
+
+.button_wrapper button:hover{
+  transform: scale(1.05);
+  background-color: white;
+  color: var(--rosepink);
+}
+
+
+.bow, .arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+}
+
+.bow{
+  left: 0;
+  transform: translate(-60%, -50%);
+  width: clamp(60px, 10vw, 130px);
+}
+
+.arrow{
+  right: 0;
+  transform: translate(45%, -45%);
+  width: clamp(100px, 20vw, 300px);
+}
+
+.button_wrapper:hover .bow{
+  transform: translate(-90%, -50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.button_wrapper:hover .arrow{
+  transform: translate(75%, -45%);
+  transition: transform 0.3s ease-in-out;
 }
 
 .button_small{
@@ -330,6 +423,14 @@ button{
   border-radius: 12px;
   margin-bottom: 10px;
   width: clamp(160px, 18vw, 300px);
+  transform: translateY(-50px);
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.button_small:hover{
+  transform: translateY(-50px) scale(1.05);
+  background-color: white;
+  color: var(--rosepink);
 }
 
 #contactBtn{
